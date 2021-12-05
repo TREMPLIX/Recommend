@@ -6,7 +6,7 @@ import sys
 sys.path.append('{}/../'.format(os.path.dirname(__file__)))
 
 from model.recsys import RecSys
-from component.sqlite import Sqlite
+from component.db.sqlite import Sqlite
 
 
 class RecSysTest(unittest.TestCase):

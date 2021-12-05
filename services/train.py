@@ -1,5 +1,5 @@
 import pickle
-from component.sqlite import Sqlite
+from component.db.sqlite import Sqlite
 from model.recsys import RecSys 
 
 
