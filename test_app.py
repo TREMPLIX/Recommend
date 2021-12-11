@@ -2,5 +2,5 @@ from services import train
 train.run()
 
 
-from services.predict_top10 import run
+from services.update_user_ratings import run
 run(1)
