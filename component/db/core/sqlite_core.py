@@ -12,11 +12,11 @@ class SqliteCore(Base):
 
     def create_connection(self):
         self.cnx = sqlite3.connect(self.db)
-        self.lg.read_logs('Создание коннекта с бд')
+        self.lg.write_logs('Создание коннекта с бд')
 
     def close_connection(self):
         self.cnx.close()
-        self.lg.read_logs('Закрытие коннекта с бд')
+        self.lg.write_logs('Закрытие коннекта с бд')
 
     def get_data(self, query):
         self.create_connection()

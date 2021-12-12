@@ -1,9 +1,10 @@
-import datetime
-from datetime import date
 import os
+from datetime import date
+from component.logs.core.base import Base
 
 
-class logging:
+class LogsCore(Base):
+
     def __init__(self):
         self.log_filename = 'data/logs/{}.txt'.format(date.today())
         if not os.path.exists(self.log_filename):
@@ -19,10 +20,7 @@ class logging:
     def close_log_file(self):
         self.f.close()
 
-    def write_logs(self, messages):
+    def write_log(self, msg):
         self.open_log_file()
-        d = datetime.datetime.now().time()
-        msg = '{}, {} \n'.format(messages, d)
         self.f.write(msg)
         self.close_log_file()
-

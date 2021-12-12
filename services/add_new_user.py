@@ -28,4 +28,4 @@ def run():
     for i in insert_list:
         s.insert_ratings(i[0], i[1], i[2])
 
-    lg.read_logs('Создали пользователя {}'.format(new_user_id))
+    lg.write_logs('Создали пользователя {}'.format(new_user_id))

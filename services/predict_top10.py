@@ -11,7 +11,7 @@ def run(user_id):
     lg = logging()
     with open("data/model/model.pkl", 'rb') as f:
         rc = pickle.load(f)
-    lg.read_logs('Загрузили модель')
+    lg.write_logs('Загрузили модель')
     test_table = pd.DataFrame()
 
     s = Sqlite('data/db/movie_data.db')
