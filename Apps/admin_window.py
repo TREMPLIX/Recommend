@@ -26,6 +26,7 @@ layout = html.Div([
     Input('admin_window-dropdown', 'value'))
 
 def display_value(value):
+    os.system(r'{}/data/logs/{}'.format(os.path.dirname(__file__),value))
     return 'You have selected "{}"'.format(value)
 
 @app.callback(
@@ -34,4 +35,4 @@ def display_value(value):
 )
 def update_output(n_clicks):
     k, hr = train.run()
-    return 'hit_rate@{} = {}'.format(k, hr)
+    return 'hit_rate@{} = {}'.format(k, round(hr * 100, 2))
