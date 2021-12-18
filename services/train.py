@@ -25,3 +25,4 @@ def run():
     with open("data/model/model.pkl", "wb") as f:
         pickle.dump(rc, f)
     print('train is finished')
+    return k, hr
