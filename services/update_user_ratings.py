@@ -16,8 +16,7 @@ def run(user_id):
 
     all_movie_df = s.get_movie_names()['movieId']
 
-    non_exists_movie_id = list(
-        set(all_movie_df.values.tolist()).difference(set(exists_user_df['movieId'].values.tolist())))
+    non_exists_movie_id = list(set(all_movie_df.values.tolist()).difference(set(exists_user_df['movieId'].values.tolist())))
 
     non_exists_user_df = pd.DataFrame()
     non_exists_user_df['movieId'] = non_exists_movie_id
@@ -49,5 +48,3 @@ def run(user_id):
             s.insert_ratings(i[0], i[1], i[2])
         else:
             lg.write_logs('Некорректный формат статуса существования оценки фильма')
-
-
