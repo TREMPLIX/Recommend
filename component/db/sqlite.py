@@ -47,3 +47,10 @@ class Sqlite(SqliteCore):
                                                                                                            movie_id)
         self.lg.write_logs('Пользователь {} обновил оценку {} фильму {}'.format(user_id, score, movie_id))
         self.update_table(query)
+
+    def get_user_ids(self):
+        query = 'SELECT userId FROM ratings'
+        self.lg.write_logs('Получение id всех пользователей')
+        user_ids = set(self.get_data(query)['userId'].values.tolist())
+
+        return user_ids

@@ -23,4 +23,4 @@ layout = html.Div([
     Output('app-2-display-value', 'children'),
     Input('app-2-dropdown', 'value'))
 def display_value(value):
-    return 'You have selected "{}"'.format(value)
+    return 'You have selected app2 "{}"'.format(value)
