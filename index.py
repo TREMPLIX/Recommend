@@ -3,8 +3,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 from app import app
-from Apps import admin_window, start_window, user_window, app2, new_user_window
-
+from Apps import admin_window, start_window, user_window, new_user_window, app2
 
 app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
@@ -28,7 +27,6 @@ def display_page(pathname):
         return new_user_window.layout
     else:
         return '404'
-
 
 if __name__ == '__main__':
     app.run_server(debug=False)
